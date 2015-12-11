@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Make your own 2x2 diagrams!</title>
+</head>
+<body>
+  <p> This is a 2x2</p>
+  <svg width="400px" height="400px">
+    <line x1="200" y1="50" x2="200" y2="350" style="stroke: black; stroke-width: 2"/>
+    <line x1="50" y1="200" x2="350" y2="200" style="stroke: black; stroke-width: 2"/>
+    <text contentEditable="true" x="50" y="215" fill="red">X Min</text>
+    <text id="xmax" x="320" y="215" fill="red">X Max</text>
+    <text id="ymin" onblur="updateText()" contentEditable="true" x="170" y="365" fill="red">Y Min</text>
+    <text x="170" y="45" fill="red">Y Max</text>
+    <text x="220" y="195" fill="red">X axis label</text>
+    <text x="185" y="100" fill="red"  transform="rotate(90 185 100)">Y axis Label</text>
+    <text x="220" y="120" fill="red">Q1 Label</text>
+    <text x="100" y="120" fill="red">Q2 Label</text>
+    <text x="100" y="270" fill="red">Q3 Label</text>
+    <text x="220" y="270" fill="red">Q4 Label</text>
+  </svg>
+</body>
+<div id="testdiv" onblur="updateText()" contentEditable="true" style="width:100px; height: 25px; border: 2px red dashed"> Y max</div>
+<div id="otherdiv" style="transform: rotate(45deg)">Blah</div>
+<script>
+function updateText() {
+  var newstr=document.getElementById("ymin").textContent;
+  document.getElementById("ymin").textContent=newstr;
+
+}
+</script>
+</html>
